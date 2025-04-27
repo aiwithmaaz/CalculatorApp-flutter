@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:calculator/btnclick.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,7 @@ class _HomepageState extends State<Homepage> {
     return Expanded(
       child: OutlinedButton(
         style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.all(Colors.amber.shade500),
+          backgroundColor: WidgetStateProperty.all(Colors.grey.shade900),
         ),
         onPressed: () {
           btnclickedFunction(btnVal);
@@ -33,10 +35,14 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Calculator"),
+        backgroundColor: Colors.grey.shade900,
+        title: const Text(
+          "Calculator",
+          style: TextStyle(color: Colors.white, fontSize: 40),
+        ),
       ),
       body: Container(
-        color: Colors.amber.shade200,
+        color: Colors.black,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -46,7 +52,10 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.all(10),
                 child: Text(
                   texttodisplay,
-                  style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                  style: const TextStyle(
+                      color: Colors.white70,
+                      fontSize: 50,
+                      fontWeight: FontWeight.w600),
                 ),
               ),
             ),
